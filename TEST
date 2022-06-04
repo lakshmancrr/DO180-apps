@@ -1,1 +1,104 @@
-OCP4
+    1  exit
+    2  ps -ef 
+    3  ps -ef | grep dnf
+    4  exit
+    5  oc version
+    6  podman --version
+    7  df -h
+    8  sudo growpart /dev/vda 3
+    9  sudo xfs_growfs /
+   10  df -h
+   11  lab-configure
+   12  exit
+   13  exit
+   14  ssh classroom
+   15  exit
+   16  whoami
+   17  git config --global credential.helper cache
+   18   ping google.com
+   19  lab-configure
+   20  cd ~
+   21  pwd
+   22  lab-configure
+   23  history 
+   24  git clone https://github.com/lakshmancrr/DO180-apps
+   25  ll
+   26  cd DO180-apps/
+   27  ll
+   28  pwd
+   29  git status
+   30  git checkout -bn testbranch
+   31  git checkout -b testbranch
+   32  pwd
+   33  ll
+   34  echo "D0180" >TEST
+   35  git add .
+   36  git commit -m "d0180"
+   37  git push
+   38  ll
+   39  git push --set-upstream origin testbranch
+   40  history 
+   41  git status
+   42  echo "OCP4" >TEST
+   43  git add .
+   44  gt commit -m "OCP4"
+   45  git commit -m "OCP4"
+   46  git push
+   47  ll
+   48  cd TE
+   49  cd TEST
+   50  git status
+   51  cat /etc/containers/registries.
+   52  cat /etc/containers/registries.conf
+   53  cd ~
+   54  lab container-create start
+   55  podman login registry.redhat.io
+   56  podman search rhel
+   57  sudo podman login registry.redhat.io
+   58  pwd
+   59  podman search registry.redhat.io
+   60  podman login registry.redhat.io
+   61  ll
+   62  podman run --name mysql-basic \
+   63  podman search registry.redhat.io/rhel8/mysql
+   64  podman pull registry.redhat.io/rhel8/mysql-80
+   65  podman inspect registry.redhat.io/rhel8/mysql-80
+   66  podman images
+   67  ll
+   68  podman inspect registry.redhat.io/rhel8/mysql-80|grep -i run
+   69  history 
+   70  podman inspect registry.redhat.io/rhel8/mysql-80|grep -i run
+   71  podman run -d -e MYSQL_USER=lakshmancrr -e MYSQL_PASSWORD=passw0rd -e MYSQL_DATABASE=item -e MYSQL_ROOT_PASSWORD=redhat -p 3306:3306 registry.redhat.io/rhel8/mysql-80:1
+   72  podman container list
+   73  podman ps
+   74  podman logs sad_boyd
+   75  podman container list
+   76  podman logs sad_boyd
+   77  history 
+   78  podman inspect registry.redhat.io/rhel8/mysql-80
+   79  history 
+   80  podman search registry.redhat.io/rhel8/mysql
+   81  podman container list
+   82  podman exec -it sad_boyd
+   83  podman exec -it sad_boyd /bin/bash
+   84  lab container-create finish
+   85  podman container list
+   86  history 
+   87  podman ps -a
+   88  podman images
+   89  lab container-rootless start
+   90  sudo podman run --rm --name asroot -it registry.access.redhat.com/ubi8:latest /bin/bash
+   91  podman container list
+   92  podman ps -a
+   93  podman run --rm -name asuser -it registry.access.redhat.com/ubi8:latest /bin/bash
+   94  podman run --rm --name asuser -it registry.access.redhat.com/ubi8:latest /bin/bash
+   95  podman ps -a
+   96  lab container-rootless finish
+   97  git status
+   98  pwd
+   99  ll
+  100  cd DO180-apps/
+  101  git status
+  102  git commit
+  103  history 
+  104  history >TEST 
